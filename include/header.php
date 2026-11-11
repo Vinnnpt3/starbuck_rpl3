@@ -11,7 +11,7 @@
 
 <body>
 
-    <nav class="navbar md:navbar-expand bg-1">
+    <nav class="navbar md:navbar-expand bg-1 mb-5">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Starbucks</a>
             <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer"
@@ -26,13 +26,14 @@
                 <div class="drawer-body mb-2 md:mb-0">
                     <ul class="nav navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Kasir</a>
+                            <a class="nav-link active" aria-current="page"
+                                href="/starbuck/pages/cashiers/list.php">Kasir</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produk</a>
+                            <a class="nav-link" href="/starbuck/pages/products/list.php">Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Transaksi</a>
+                            <a class="nav-link" href="/starbuck/pages/transactions/list.php">Transaksi</a>
                         </li>
                     </ul>
 

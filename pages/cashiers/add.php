@@ -7,9 +7,10 @@
         <div class="col-3"></div>
         <div class="col-6 mt-5">
             <form action="../../process/process_cashiers.php" method="post">
+                <input type="hidden" name="action" value="add">
                 <div class="form-floating mt-5">
                     <label for="floatingInput">Id Kasir</label>
-                    <input type="number" name="id_kasir" class="form-control" id="floatingInput" placeholder="Id Kasir">
+                    <input type="number" name="id" class="form-control" id="floatingInput" placeholder="Id Kasir">
                 </div>
                 <div class="form-floating mt-5">
                     <label for="floatingInput">Nama Kasir</label>
@@ -29,7 +30,7 @@
                     <input type="email" name="email" class="form-control" id="floatingInput"
                         placeholder="nama@contoh.com">
                 </div>
-                <button type="submit" class="btn-solid theme-success mt-5">+ Add Cashier</button>
+                <button type="submit" class="btn-solid theme-success mt-5">Tambah Data</button>
             </form>
         </div>
         <div class="col-3"></div>
