@@ -1,5 +1,8 @@
 <?php
-    include '../../include/header.php';
+if (!defined('ROOTPATH')) {
+    define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'] . '/starbuck');
+}
+include ROOTPATH . '/include/header.php';
 ?>
 
 <div class="container">
@@ -39,5 +42,5 @@
 
 
 <?php
-    include '../../include/footer.php';
+include ROOTPATH . '/include/footer.php';
 ?>

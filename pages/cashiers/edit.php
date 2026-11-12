@@ -1,11 +1,15 @@
 <?php
     // Mendefinisikan ROOTPATH sebagai path ke direktori root proyek
-    define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'] . '/starbuck');
+    if (!defined('ROOTPATH')) {
+        define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'] . '/starbuck');
+    }
     include ROOTPATH . '/include/header.php';
     include ROOTPATH . '/config/config.php';
 
+    /** @var mysqli $koneksi */
+
     $id = $_GET['id_kasir'];
-    $query = "SELECT * FROM Tabel_Kasir WHERE id_kasir = '$id'";
+    $query = "SELECT * FROM kasir WHERE id_kasir = '$id'";
     $result = mysqli_query($koneksi, $query);
     $row = mysqli_fetch_assoc($result);
 ?>
@@ -46,5 +50,5 @@
 
 
 <?php
-    include '../../include/footer.php';
+include ROOTPATH . '/include/footer.php';
 ?>

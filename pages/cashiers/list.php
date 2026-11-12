@@ -1,6 +1,8 @@
 <?php
 // Mendefinisikan ROOTPATH sebagai path ke direktori root proyek
-define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'] . '/starbuck');
+if (!defined('ROOTPATH')) {
+    define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'] . '/starbuck');
+}
 include ROOTPATH . '/include/header.php';
 ?>
 <center>
@@ -21,8 +23,9 @@ include ROOTPATH . '/include/header.php';
         </thead>
         <tbody>
             <?php
-            include '../../config/config.php';
-            $query = "SELECT * FROM Tabel_Kasir";
+            include ROOTPATH . '/config/config.php';
+            /** @var mysqli $koneksi */
+            $query = "SELECT * FROM kasir";
             $result = mysqli_query($koneksi, $query);
             $no = 1;
             while ($row = mysqli_fetch_assoc($result)) {

@@ -1,2 +1,2 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "passwordlocal", "Starbuck_RPL3") or die("Could not connect to database");
+$koneksi = mysqli_connect("127.0.0.1", "root", "", "starbuck_rpl3") or die("Could not connect to database: " . mysqli_connect_error());
