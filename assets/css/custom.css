@@ -1,0 +1,485 @@
+/* ==========================================================================
+   Starbucks POS - Human-Crafted Dark Design System
+   Inspired by Starbucks Reserve & Modern POS Platforms (Square / Toast)
+   ========================================================================== */
+
+:root {
+    --sb-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Matte Charcoal Surfaces (No neon, no excessive glassmorphism) */
+    --sb-bg-app: #0e1013;
+    --sb-surface: #16181d;
+    --sb-surface-hover: #1c1f26;
+    --sb-surface-header: #131519;
+    --sb-surface-input: #111317;
+    
+    /* Authentic Starbucks Forest Green */
+    --sb-green: #006241;
+    --sb-green-hover: #00754a;
+    --sb-green-light: #1e3932;
+    --sb-green-accent: #059669;
+    
+    /* Borders & Dividers */
+    --sb-border: #232730;
+    --sb-border-subtle: #1c2027;
+    --sb-border-focus: #00754a;
+    
+    /* Typography */
+    --sb-text: #f3f4f6;
+    --sb-text-secondary: #9ca3af;
+    --sb-text-muted: #6b7280;
+    
+    /* Subtle Accents */
+    --sb-gold: #cba258;
+    --sb-danger-bg: #221416;
+    --sb-danger-border: #4d1c22;
+    --sb-danger-text: #fca5a5;
+    
+    --sb-warning-bg: #241c10;
+    --sb-warning-border: #573a11;
+    --sb-warning-text: #fcd34d;
+    
+    /* Sizing & Radius */
+    --sb-radius-sm: 6px;
+    --sb-radius: 8px;
+    --sb-radius-lg: 12px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--sb-font) !important;
+    background-color: var(--sb-bg-app) !important;
+    color: var(--sb-text) !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--sb-bg-app);
+}
+::-webkit-scrollbar-thumb {
+    background: #232730;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--sb-text) !important;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-top: 0;
+}
+
+/* Navbar - Minimal, Elegant Header */
+.sb-navbar {
+    background: var(--sb-surface);
+    border-bottom: 1px solid var(--sb-border);
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sb-navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.sb-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none !important;
+    color: var(--sb-text) !important;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+}
+
+.sb-brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--sb-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.sb-brand-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--sb-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-left: -0.25rem;
+}
+
+.sb-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sb-nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    color: var(--sb-text-secondary);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: var(--sb-radius-sm);
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.sb-nav-item a:hover {
+    color: var(--sb-text);
+    background: var(--sb-surface-hover);
+}
+
+.sb-nav-item a.active {
+    color: #ffffff;
+    background: rgba(0, 98, 65, 0.25);
+    border: 1px solid rgba(0, 98, 65, 0.5);
+    font-weight: 600;
+}
+
+/* Page Header Layout */
+.sb-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sb-border);
+    margin-bottom: 1.75rem;
+}
+
+.sb-page-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.02em;
+}
+
+.sb-page-desc {
+    color: var(--sb-text-muted);
+    font-size: 0.87rem;
+    margin: 0;
+}
+
+/* Elegant Cards */
+.sb-card {
+    background: var(--sb-surface);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sb-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--sb-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Refined Stat Cards */
+.sb-stat-card {
+    background: var(--sb-surface);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius);
+    padding: 1.25rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.sb-stat-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--sb-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.sb-stat-value {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+}
+
+.sb-stat-sub {
+    font-size: 0.78rem;
+    color: var(--sb-text-muted);
+    margin-top: 0.35rem;
+}
+
+/* Professional Tables */
+.sb-table-card {
+    background: var(--sb-surface);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius);
+    overflow: hidden;
+}
+
+.sb-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+.sb-table th {
+    background: var(--sb-surface-header);
+    color: var(--sb-text-muted);
+    font-weight: 600;
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--sb-border);
+    white-space: nowrap;
+}
+
+.sb-table td {
+    padding: 0.9rem 1rem;
+    color: var(--sb-text);
+    border-bottom: 1px solid var(--sb-border);
+    vertical-align: middle;
+}
+
+.sb-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.sb-table tbody tr:hover td {
+    background-color: var(--sb-surface-hover);
+}
+
+/* Monospace Numbers */
+.num-tabular {
+    font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.86rem;
+}
+
+.text-price {
+    font-weight: 600;
+    color: #34d399;
+}
+
+/* Refined Action Badges & Buttons */
+.btn-sb-primary {
+    background: var(--sb-green);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--sb-radius-sm);
+    padding: 0.45rem 0.95rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.btn-sb-primary:hover {
+    background: var(--sb-green-hover);
+    color: #ffffff;
+}
+
+.btn-sb-secondary {
+    background: transparent;
+    color: var(--sb-text-secondary);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius-sm);
+    padding: 0.45rem 0.95rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-sb-secondary:hover {
+    background: var(--sb-surface-hover);
+    color: var(--sb-text);
+}
+
+/* Compact Table Action Buttons */
+.btn-action-edit {
+    background: var(--sb-warning-bg);
+    border: 1px solid var(--sb-warning-border);
+    color: var(--sb-warning-text);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--sb-radius-sm);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-action-edit:hover {
+    background: #332612;
+    color: #fef08a;
+}
+
+.btn-action-delete {
+    background: var(--sb-danger-bg);
+    border: 1px solid var(--sb-danger-border);
+    color: var(--sb-danger-text);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--sb-radius-sm);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-action-delete:hover {
+    background: #331a1e;
+    color: #fee2e2;
+}
+
+.btn-action-view {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--sb-border);
+    color: var(--sb-text-secondary);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--sb-radius-sm);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-action-view:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Forms */
+.sb-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.sb-form-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--sb-text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.sb-input, select.sb-input {
+    width: 100%;
+    background-color: var(--sb-surface-input);
+    border: 1px solid var(--sb-border);
+    color: var(--sb-text);
+    border-radius: var(--sb-radius-sm);
+    padding: 0.55rem 0.85rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease;
+}
+
+.sb-input:focus, select.sb-input:focus {
+    outline: none;
+    border-color: var(--sb-green-accent);
+}
+
+.sb-input::placeholder {
+    color: #4b5563;
+}
+
+/* Subtle Pill Badges */
+.sb-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--sb-text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sb-pill-green {
+    background: rgba(5, 150, 105, 0.12);
+    color: #34d399;
+    border-color: rgba(5, 150, 105, 0.25);
+}
+
+/* Receipt / Detail Card */
+.sb-receipt-summary {
+    background: var(--sb-surface-header);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius);
+    padding: 1.25rem;
+}
+
+.sb-receipt-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    color: var(--sb-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.sb-receipt-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--sb-border);
+    margin-top: 0.75rem;
+}
+
+/* Remove old conflicting Halfmoon styles gracefully */
+.navbar.bg-1 {
+    display: none !important;
+}
