@@ -1,485 +1,707 @@
 /* ==========================================================================
-   Starbucks POS - Human-Crafted Dark Design System
-   Inspired by Starbucks Reserve & Modern POS Platforms (Square / Toast)
+   STARBUCKS COFFEE POS - CLEAN MANUAL WHITE THEME (NUANSA PUTIH ELEGAN)
+   Desain serba putih, minimalis, bersih, elegan, dan profesional.
+   Murni kodingan terstruktur tanpa icon / ornamen AI yang berlebihan.
    ========================================================================== */
 
 :root {
-    --sb-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color-scheme: light;
     
-    /* Matte Charcoal Surfaces (No neon, no excessive glassmorphism) */
-    --sb-bg-app: #0e1013;
-    --sb-surface: #16181d;
-    --sb-surface-hover: #1c1f26;
-    --sb-surface-header: #131519;
-    --sb-surface-input: #111317;
+    /* Palet Warna Putih Bersih & Nuansa Elegan */
+    --sb-bg: #ffffff;            /* Latar belakang halaman serba putih */
+    --sb-surface: #ffffff;       /* Kartu & kontainer putih */
+    --sb-surface-hover: #f9fafb; /* Efek hover halus pada baris & tombol */
+    --sb-surface-alt: #f9fafb;   /* Header tabel & background perhitungan */
+    --sb-input-bg: #ffffff;      /* Latar input form putih */
     
-    /* Authentic Starbucks Forest Green */
-    --sb-green: #006241;
-    --sb-green-hover: #00754a;
-    --sb-green-light: #1e3932;
-    --sb-green-accent: #059669;
+    /* Warna Identitas Starbucks */
+    --sb-green: #006241;         /* Starbucks Official Deep Forest Green */
+    --sb-green-hover: #004d34;   /* Hover hijau lebih dalam */
+    --sb-green-soft: #edf7f2;    /* Latar hijau sangat lembut */
+    --sb-gold: #8c6239;          /* Aksen bronze / coffee gold */
     
-    /* Borders & Dividers */
-    --sb-border: #232730;
-    --sb-border-subtle: #1c2027;
-    --sb-border-focus: #00754a;
+    /* Garis & Border yang Halus & Presisi */
+    --sb-border: #eaecf0;        /* Border abu-abu tipis & elegan */
+    --sb-border-subtle: #f2f4f7; /* Garis pemisah baris tabel */
     
-    /* Typography */
-    --sb-text: #f3f4f6;
-    --sb-text-secondary: #9ca3af;
-    --sb-text-muted: #6b7280;
+    /* Tipografi Bersih (High Contrast & Legibility) */
+    --sb-heading: #101828;       /* Judul hitam slate tajam & jelas */
+    --sb-text: #344054;          /* Teks isi slate standar */
+    --sb-text-muted: #667085;    /* Teks sekunder / keterangan abu-abu */
+    --sb-text-dim: #98a2b3;      /* Placeholder */
     
-    /* Subtle Accents */
-    --sb-gold: #cba258;
-    --sb-danger-bg: #221416;
-    --sb-danger-border: #4d1c22;
-    --sb-danger-text: #fca5a5;
+    /* Tombol Aksi */
+    --sb-amber-bg: #fffbeb;
+    --sb-amber-border: #fef08a;
+    --sb-amber-text: #b45309;
     
-    --sb-warning-bg: #241c10;
-    --sb-warning-border: #573a11;
-    --sb-warning-text: #fcd34d;
-    
-    /* Sizing & Radius */
-    --sb-radius-sm: 6px;
+    --sb-red-bg: #fef2f2;
+    --sb-red-border: #fee2e2;
+    --sb-red-text: #b91c1c;
+
     --sb-radius: 8px;
-    --sb-radius-lg: 12px;
+    --sb-radius-sm: 6px;
+    --sb-shadow: 0 1px 3px rgba(16, 24, 40, 0.05), 0 1px 2px rgba(16, 24, 40, 0.03);
+    --sb-shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.06), 0 2px 4px -2px rgba(16, 24, 40, 0.03);
 }
 
-/* Base Reset */
+/* Reset & Dasar */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--sb-font) !important;
-    background-color: var(--sb-bg-app) !important;
+    background-color: var(--sb-bg) !important;
     color: var(--sb-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     margin: 0;
     padding: 0;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle Scrollbar */
+/* Scrollbar Sederhana & Bersih */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--sb-bg-app);
+    background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-    background: #232730;
+    background: #e4e7ec;
     border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #374151;
+    background: #d0d5dd;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--sb-text) !important;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    margin-top: 0;
-}
-
-/* Navbar - Minimal, Elegant Header */
-.sb-navbar {
-    background: var(--sb-surface);
+/* Header Navigasi Serba Putih Elegan */
+.sb-header {
+    background-color: #ffffff;
     border-bottom: 1px solid var(--sb-border);
-    padding: 0 1.5rem;
-    height: 60px;
-    display: flex;
-    align-items: center;
+    padding: 0.85rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
 }
 
-.sb-navbar .container-fluid {
+.sb-brand-wrap {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-}
-
-.sb-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: baseline;
+    gap: 0.45rem;
     text-decoration: none !important;
-    color: var(--sb-text) !important;
+}
+
+.sb-brand-title {
+    font-size: 1.2rem;
     font-weight: 700;
-    font-size: 1.05rem;
+    color: var(--sb-green);
     letter-spacing: -0.02em;
 }
 
-.sb-brand-logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--sb-green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.sb-brand-tag {
-    font-size: 0.7rem;
-    font-weight: 600;
+.sb-brand-sub {
+    font-size: 0.72rem;
     color: var(--sb-gold);
-    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 0.08em;
-    margin-left: -0.25rem;
+    text-transform: uppercase;
+    background-color: #fbf6ee;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    border: 1px solid #f3e8d2;
 }
 
-.sb-nav-menu {
+/* Daftar Menu Navigasi */
+.sb-nav-list {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.35rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .sb-nav-item a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.85rem;
-    color: var(--sb-text-secondary);
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    color: var(--sb-text-muted);
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 500;
     border-radius: var(--sb-radius-sm);
-    transition: color 0.15s ease, background-color 0.15s ease;
+    transition: all 0.15s ease;
 }
 
 .sb-nav-item a:hover {
-    color: var(--sb-text);
-    background: var(--sb-surface-hover);
+    color: var(--sb-heading);
+    background-color: var(--sb-surface-hover);
 }
 
 .sb-nav-item a.active {
     color: #ffffff;
-    background: rgba(0, 98, 65, 0.25);
-    border: 1px solid rgba(0, 98, 65, 0.5);
+    background-color: var(--sb-green);
     font-weight: 600;
 }
 
-/* Page Header Layout */
-.sb-page-header {
+/* Header Judul Halaman */
+.sb-header-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1.75rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.9rem;
     border-bottom: 1px solid var(--sb-border);
-    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.sb-page-title {
-    font-size: 1.45rem;
+.sb-title {
+    font-size: 1.35rem;
     font-weight: 700;
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.2rem 0;
+    color: var(--sb-heading);
     letter-spacing: -0.02em;
 }
 
-.sb-page-desc {
+.sb-desc {
+    font-size: 0.85rem;
     color: var(--sb-text-muted);
-    font-size: 0.87rem;
     margin: 0;
 }
 
-/* Elegant Cards */
-.sb-card {
-    background: var(--sb-surface);
+/* Kotak Kontainer / Card Putih Elegan */
+.sb-box {
+    background-color: var(--sb-surface);
     border: 1px solid var(--sb-border);
     border-radius: var(--sb-radius);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--sb-shadow);
 }
 
-.sb-card-title {
-    font-size: 1.05rem;
+.sb-box-title {
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--sb-text);
+    color: var(--sb-heading);
+    margin-bottom: 0.85rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Refined Stat Cards */
-.sb-stat-card {
-    background: var(--sb-surface);
+/* Banner Sambutan di Dashboard */
+.sb-welcome-banner {
+    background-color: var(--sb-surface);
     border: 1px solid var(--sb-border);
+    border-left: 4px solid var(--sb-green);
     border-radius: var(--sb-radius);
-    padding: 1.25rem 1.35rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    box-shadow: var(--sb-shadow);
 }
 
-.sb-stat-label {
-    font-size: 0.78rem;
+.sb-welcome-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem 0;
+    color: var(--sb-heading);
+    letter-spacing: -0.01em;
+}
+
+.sb-welcome-sub {
+    font-size: 0.85rem;
+    color: var(--sb-text-muted);
+    margin: 0;
+}
+
+.sb-badge-store {
+    background-color: #ffffff;
+    border: 1px solid var(--sb-border);
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--sb-radius-sm);
+    font-size: 0.76rem;
+    color: var(--sb-text-muted);
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+}
+
+/* Kartu Ringkasan Metrik / KPI */
+.sb-kpi-card {
+    background-color: var(--sb-surface);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius);
+    padding: 1.25rem;
+    height: 100%;
+    box-shadow: var(--sb-shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.sb-kpi-card:hover {
+    box-shadow: var(--sb-shadow-md);
+    transform: translateY(-1px);
+}
+
+.sb-kpi-label {
+    font-size: 0.76rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--sb-text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
-.sb-stat-value {
-    font-size: 1.65rem;
+.sb-kpi-val {
+    font-size: 1.55rem;
     font-weight: 700;
-    color: #ffffff;
-    font-variant-numeric: tabular-nums;
+    color: var(--sb-heading);
+    margin: 0;
     letter-spacing: -0.02em;
 }
 
-.sb-stat-sub {
-    font-size: 0.78rem;
-    color: var(--sb-text-muted);
+.sb-kpi-sub {
+    font-size: 0.76rem;
+    color: var(--sb-text-dim);
     margin-top: 0.35rem;
 }
 
-/* Professional Tables */
-.sb-table-card {
-    background: var(--sb-surface);
+/* Tabel Data Putih Bersih */
+.sb-table-wrap {
+    background-color: var(--sb-surface);
     border: 1px solid var(--sb-border);
     border-radius: var(--sb-radius);
     overflow: hidden;
+    box-shadow: var(--sb-shadow);
 }
 
-.sb-table {
+.sb-main-table {
     width: 100%;
     border-collapse: collapse;
     margin: 0;
     font-size: 0.88rem;
 }
 
-.sb-table th {
-    background: var(--sb-surface-header);
+.sb-main-table th {
+    background-color: var(--sb-surface-alt);
     color: var(--sb-text-muted);
     font-weight: 600;
-    font-size: 0.73rem;
+    font-size: 0.74rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0.85rem 1rem;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--sb-border);
     text-align: left;
-    border-bottom: 1px solid var(--sb-border);
-    white-space: nowrap;
 }
 
-.sb-table td {
-    padding: 0.9rem 1rem;
+.sb-main-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--sb-border-subtle);
     color: var(--sb-text);
-    border-bottom: 1px solid var(--sb-border);
     vertical-align: middle;
+    background-color: #ffffff;
 }
 
-.sb-table tbody tr:last-child td {
+.sb-main-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-.sb-table tbody tr:hover td {
+.sb-main-table tbody tr:hover td {
     background-color: var(--sb-surface-hover);
 }
 
-/* Monospace Numbers */
-.num-tabular {
-    font-variant-numeric: tabular-nums;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.86rem;
-}
-
-.text-price {
-    font-weight: 600;
-    color: #34d399;
-}
-
-/* Refined Action Badges & Buttons */
-.btn-sb-primary {
-    background: var(--sb-green);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--sb-radius-sm);
-    padding: 0.45rem 0.95rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    text-decoration: none !important;
-    cursor: pointer;
-    transition: background 0.15s ease;
-}
-
-.btn-sb-primary:hover {
-    background: var(--sb-green-hover);
-    color: #ffffff;
-}
-
-.btn-sb-secondary {
-    background: transparent;
-    color: var(--sb-text-secondary);
-    border: 1px solid var(--sb-border);
-    border-radius: var(--sb-radius-sm);
-    padding: 0.45rem 0.95rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    text-decoration: none !important;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
-}
-
-.btn-sb-secondary:hover {
-    background: var(--sb-surface-hover);
-    color: var(--sb-text);
-}
-
-/* Compact Table Action Buttons */
-.btn-action-edit {
-    background: var(--sb-warning-bg);
-    border: 1px solid var(--sb-warning-border);
-    color: var(--sb-warning-text);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--sb-radius-sm);
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-decoration: none !important;
+/* Label Status & Tag */
+.sb-tag {
     display: inline-block;
-}
-
-.btn-action-edit:hover {
-    background: #332612;
-    color: #fef08a;
-}
-
-.btn-action-delete {
-    background: var(--sb-danger-bg);
-    border: 1px solid var(--sb-danger-border);
-    color: var(--sb-danger-text);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--sb-radius-sm);
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-decoration: none !important;
-    display: inline-block;
-}
-
-.btn-action-delete:hover {
-    background: #331a1e;
-    color: #fee2e2;
-}
-
-.btn-action-view {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--sb-border);
-    color: var(--sb-text-secondary);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--sb-radius-sm);
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-decoration: none !important;
-    display: inline-block;
-}
-
-.btn-action-view:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-}
-
-/* Forms */
-.sb-form-group {
-    margin-bottom: 1.25rem;
-}
-
-.sb-form-label {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--sb-text-secondary);
-    margin-bottom: 0.4rem;
-}
-
-.sb-input, select.sb-input {
-    width: 100%;
-    background-color: var(--sb-surface-input);
-    border: 1px solid var(--sb-border);
-    color: var(--sb-text);
-    border-radius: var(--sb-radius-sm);
-    padding: 0.55rem 0.85rem;
-    font-size: 0.9rem;
-    font-family: inherit;
-    transition: border-color 0.15s ease;
-}
-
-.sb-input:focus, select.sb-input:focus {
-    outline: none;
-    border-color: var(--sb-green-accent);
-}
-
-.sb-input::placeholder {
-    color: #4b5563;
-}
-
-/* Subtle Pill Badges */
-.sb-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.15rem 0.5rem;
+    padding: 0.15rem 0.55rem;
     font-size: 0.75rem;
     font-weight: 500;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--sb-text-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.sb-pill-green {
-    background: rgba(5, 150, 105, 0.12);
-    color: #34d399;
-    border-color: rgba(5, 150, 105, 0.25);
+/* Thumbnail Produk */
+.sb-product-thumb {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: var(--sb-radius-sm);
+    border: 1px solid var(--sb-border);
+    background-color: var(--sb-surface-alt);
+    display: block;
 }
 
-/* Receipt / Detail Card */
-.sb-receipt-summary {
-    background: var(--sb-surface-header);
+/* Filter Pills */
+.sb-filter-pill {
+    background-color: #ffffff;
+    border: 1px solid var(--sb-border);
+    color: var(--sb-text-muted);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sb-filter-pill:hover {
+    background-color: var(--sb-surface-hover);
+    color: var(--sb-heading);
+    border-color: #d0d5dd;
+}
+
+.sb-filter-pill.active {
+    background-color: var(--sb-green);
+    color: #ffffff;
+    border-color: var(--sb-green);
+    font-weight: 600;
+}
+
+/* POS Menu Cards Grid */
+.sb-pos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.85rem;
+    max-height: 520px;
+    overflow-y: auto;
+    padding: 0.25rem;
+}
+
+.sb-pos-card {
+    background-color: #ffffff;
     border: 1px solid var(--sb-border);
     border-radius: var(--sb-radius);
-    padding: 1.25rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+    user-select: none;
 }
 
-.sb-receipt-row {
+.sb-pos-card:hover {
+    border-color: var(--sb-green);
+    box-shadow: 0 4px 12px rgba(0, 98, 65, 0.12);
+    transform: translateY(-2px);
+}
+
+.sb-pos-card.sb-pos-disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+.sb-pos-card.sb-pos-disabled:hover {
+    border-color: var(--sb-border);
+    box-shadow: none;
+    transform: none;
+}
+
+.sb-pos-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background-color: var(--sb-surface-alt);
+    border-bottom: 1px solid var(--sb-border-subtle);
+}
+
+.sb-pos-body {
+    padding: 0.65rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.sb-pos-name {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--sb-heading);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.sb-pos-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 0.88rem;
-    color: var(--sb-text-secondary);
-    margin-bottom: 0.5rem;
+    align-items: baseline;
+    margin-top: 0.4rem;
 }
 
-.sb-receipt-total {
+/* Quantity Adjuster Buttons */
+.sb-qty-btn {
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d0d5dd;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-weight: 700;
+    color: var(--sb-heading);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.sb-qty-btn:hover {
+    background-color: var(--sb-surface-hover);
+    border-color: var(--sb-green);
+    color: var(--sb-green);
+}
+
+/* Quick Cash Preset Buttons */
+.sb-quick-cash-btn {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.76rem;
+    border: 1px solid #d0d5dd;
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: var(--sb-text);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.12s ease;
+}
+
+.sb-quick-cash-btn:hover {
+    background-color: var(--sb-green-soft);
+    border-color: var(--sb-green);
+    color: var(--sb-green);
+}
+
+.sb-tag-muted {
+    background-color: #f2f4f7;
+    border: 1px solid var(--sb-border);
+    color: var(--sb-text);
+}
+
+.sb-tag-green {
+    background-color: var(--sb-green-soft);
+    border: 1px solid rgba(0, 98, 65, 0.2);
+    color: var(--sb-green);
+}
+
+.sb-tag-caramel {
+    background-color: #fef6ee;
+    border: 1px solid #f9dbaf;
+    color: #93370d;
+}
+
+.sb-price-tag {
+    color: var(--sb-green);
+    font-weight: 600;
+}
+
+/* Tombol Standar */
+.sb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 1rem;
+    font-size: 0.86rem;
+    font-weight: 500;
+    border-radius: var(--sb-radius-sm);
+    text-decoration: none !important;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+}
+
+.sb-btn-green {
+    background-color: var(--sb-green);
+    color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.sb-btn-green:hover {
+    background-color: var(--sb-green-hover);
+    color: #ffffff !important;
+}
+
+.sb-btn-secondary {
+    background-color: #ffffff;
+    color: var(--sb-text) !important;
+    border-color: #d0d5dd;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.sb-btn-secondary:hover {
+    background-color: var(--sb-surface-hover);
+    color: var(--sb-heading) !important;
+    border-color: #98a2b3;
+}
+
+/* Tombol Aksi di Baris Tabel */
+.sb-action-btn {
+    padding: 0.22rem 0.6rem;
+    font-size: 0.77rem;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none !important;
+    display: inline-block;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sb-btn-edit {
+    background-color: var(--sb-amber-bg);
+    border-color: var(--sb-amber-border);
+    color: var(--sb-amber-text);
+}
+
+.sb-btn-edit:hover {
+    background-color: #fef08a;
+    color: #78350f;
+}
+
+.sb-btn-del {
+    background-color: var(--sb-red-bg);
+    border-color: var(--sb-red-border);
+    color: var(--sb-red-text);
+}
+
+.sb-btn-del:hover {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.sb-btn-view {
+    background-color: #ffffff;
+    border-color: #d0d5dd;
+    color: var(--sb-text);
+}
+
+.sb-btn-view:hover {
+    background-color: var(--sb-surface-hover);
+    color: var(--sb-heading);
+    border-color: #98a2b3;
+}
+
+/* Form & Input */
+.sb-field {
+    margin-bottom: 1.15rem;
+}
+
+.sb-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--sb-heading);
+    margin-bottom: 0.35rem;
+}
+
+.sb-input-control, select.sb-input-control {
+    width: 100%;
+    background-color: var(--sb-input-bg);
+    border: 1px solid #d0d5dd;
+    color: var(--sb-heading);
+    border-radius: var(--sb-radius-sm);
+    padding: 0.55rem 0.8rem;
+    font-size: 0.88rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sb-input-control:focus, select.sb-input-control:focus {
+    outline: none;
+    border-color: var(--sb-green);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 98, 65, 0.12);
+}
+
+.sb-input-control::placeholder {
+    color: var(--sb-text-dim);
+}
+
+.sb-input-control[readonly], select.sb-input-control:disabled {
+    background-color: var(--sb-surface-alt);
+    color: var(--sb-text);
+    cursor: default;
+    border-color: #e4e7ec;
+}
+
+/* Struk Nota Transaksi */
+.sb-receipt {
+    background-color: var(--sb-surface);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius);
+    padding: 1.75rem;
+    box-shadow: var(--sb-shadow-md);
+}
+
+.sb-receipt-top {
+    text-align: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dashed var(--sb-border);
+    margin-bottom: 1.25rem;
+}
+
+.sb-receipt-calc {
+    background-color: var(--sb-surface-alt);
+    border: 1px solid var(--sb-border);
+    border-radius: var(--sb-radius-sm);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.sb-calc-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    color: var(--sb-text-muted);
+    margin-bottom: 0.45rem;
+}
+
+.sb-calc-total {
     display: flex;
     justify-content: space-between;
     font-size: 1.15rem;
     font-weight: 700;
-    color: #ffffff;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--sb-border);
-    margin-top: 0.75rem;
+    color: var(--sb-heading);
+    border-top: 1px dashed var(--sb-border);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-/* Remove old conflicting Halfmoon styles gracefully */
+/* Utility overrides untuk tema serba putih */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--sb-heading);
+}
+
+strong {
+    color: var(--sb-heading);
+}
+
+.text-muted {
+    color: var(--sb-text-muted) !important;
+}
+
+/* Nonaktifkan navbar bawaan lama */
 .navbar.bg-1 {
     display: none !important;
+}
+
+/* Format Khusus Print Struk */
+@media print {
+    .sb-header, .sb-btn, .sb-action-btn, a[href="list.php"] {
+        display: none !important;
+    }
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    .sb-receipt {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
 }
